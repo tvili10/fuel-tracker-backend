@@ -1,14 +1,16 @@
-package hu.fueltracker.dto;
+package hu.fueltracker.dto.register;
 
-public class LoginRequest {
+public class RegisterRequest {
     private String email;
+    private String username;
     private String password;
 
-    public LoginRequest() {
+    public RegisterRequest() {
     }
 
-    public LoginRequest(String email, String password) {
+    public RegisterRequest(String email, String username, String password) {
         this.email = email;
+        this.username = username;
         this.password = password;
     }
 
@@ -18,6 +20,14 @@ public class LoginRequest {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -30,10 +40,10 @@ public class LoginRequest {
 
     @Override
     public String toString() {
-        return "LoginRequest{" +
+        return "RegisterRequest{" +
                 "email='" + email + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
 }
-

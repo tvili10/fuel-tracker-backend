@@ -1,4 +1,4 @@
-package hu.fueltracker.dto;
+package hu.fueltracker.dto.login;
 
 public class LoginResponse {
     private String message;
