@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/api/vehicles")
@@ -18,15 +19,19 @@ public class VehicleController {
     @Autowired
     private VehicleService vehicleService;
 
+    private Logger LOG = Logger.getLogger(VehicleController.class.getName());
+
     @PostMapping
     public ResponseEntity<VehicleDTO> addVehicle( @RequestHeader("User-Id") UUID userId, @RequestBody CreateVehicleRequest request) {
         VehicleDTO vehicle = vehicleService.createVehicle(userId, request);
+        LOG.info("New vehicle added for user " + userId);
         return ResponseEntity.status(HttpStatus.CREATED).body(vehicle);
     }
 
     @DeleteMapping("/{vehicleId}")
     public ResponseEntity<Void> deleteVehicle(@PathVariable UUID vehicleId) {
         vehicleService.deleteVehicle(vehicleId);
+        LOG.info("Vehicle " + vehicleId + " deleted");
         return ResponseEntity.noContent().build();
     }
 
