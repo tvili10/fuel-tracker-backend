@@ -1,4 +1,4 @@
-package hu.fueltracker.dto;
+package hu.fueltracker.dto.vehicle;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

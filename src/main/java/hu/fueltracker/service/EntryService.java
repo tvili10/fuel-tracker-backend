@@ -1,7 +1,7 @@
 package hu.fueltracker.service;
 
-import hu.fueltracker.dto.CreateEntryRequest;
-import hu.fueltracker.dto.EntryDTO;
+import hu.fueltracker.dto.entry.CreateEntryRequest;
+import hu.fueltracker.dto.entry.EntryDTO;
 import hu.fueltracker.entity.EntryEntity;
 import hu.fueltracker.repository.EntryRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package hu.fueltracker.dto;
+package hu.fueltracker.dto.entry;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,12 +10,15 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateEntryRequest {
+public class EntryDTO {
+    private UUID id;
+    private UUID userId;
     private UUID vehicleId;
     private Double amount;
     private Double fuelQuantity;
     private LocalDateTime entryDate;
     private Double odometerReading;
     private String notes;
+    private LocalDateTime createdAt;
 }
 
