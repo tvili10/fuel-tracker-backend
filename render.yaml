@@ -17,6 +17,8 @@ services:
 
 databases:
   - name: fuel-tracker-db
-    engine: postgresql
+    databaseName: fuel-tracker-db
+    user: fuel-tracker-user
+    plan: free
     ipAllowList: []
 
