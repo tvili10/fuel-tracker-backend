@@ -22,10 +22,9 @@ public class EntryService {
         entry.setUserId(userId);
         entry.setVehicleId(request.getVehicleId());
         entry.setAmount(request.getAmount());
-        entry.setFuelQuantity(request.getFuelQuantity());
-        entry.setEntryDate(request.getEntryDate());
-        entry.setOdometerReading(request.getOdometerReading());
-        entry.setNotes(request.getNotes());
+        entry.setAmount(request.getFuelQuantity());
+        entry.setDate(request.getEntryDate());
+
 
         EntryEntity savedEntry = entryRepository.save(entry);
         return convertToDTO(savedEntry);
@@ -57,10 +56,8 @@ public class EntryService {
 
         if (request.getVehicleId() != null) entry.setVehicleId(request.getVehicleId());
         if (request.getAmount() != null) entry.setAmount(request.getAmount());
-        if (request.getFuelQuantity() != null) entry.setFuelQuantity(request.getFuelQuantity());
-        if (request.getEntryDate() != null) entry.setEntryDate(request.getEntryDate());
-        if (request.getOdometerReading() != null) entry.setOdometerReading(request.getOdometerReading());
-        if (request.getNotes() != null) entry.setNotes(request.getNotes());
+        if (request.getFuelQuantity() != null) entry.setAmount(request.getFuelQuantity());
+        if (request.getEntryDate() != null) entry.setDate(request.getEntryDate());
 
         EntryEntity updatedEntry = entryRepository.save(entry);
         return convertToDTO(updatedEntry);
@@ -77,12 +74,9 @@ public class EntryService {
                 entry.getId(),
                 entry.getUserId(),
                 entry.getVehicleId(),
+                java.sql.Timestamp.valueOf(entry.getDate()),
                 entry.getAmount(),
-                entry.getFuelQuantity(),
-                entry.getEntryDate(),
-                entry.getOdometerReading(),
-                entry.getNotes(),
-                entry.getCreatedAt()
+                entry.getCost()
         );
     }
 }

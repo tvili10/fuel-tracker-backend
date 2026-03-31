@@ -15,7 +15,5 @@ public class CreateEntryRequest {
     private Double amount;
     private Double fuelQuantity;
     private LocalDateTime entryDate;
-    private Double odometerReading;
-    private String notes;
 }
 

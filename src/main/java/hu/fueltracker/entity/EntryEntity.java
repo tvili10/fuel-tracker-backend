@@ -25,28 +25,13 @@ public class EntryEntity {
     @Column(name = "vehicle_id", nullable = false)
     private UUID vehicleId;
 
-    @Column(nullable = false)
+    @Column(name = "date")
+    private LocalDateTime date;
+
+    @Column(name = "fuel_amount")
     private Double amount;
 
-    @Column(nullable = false)
-    private Double fuelQuantity;
-
-    @Column(name = "entry_date", nullable = false)
-    private LocalDateTime entryDate;
-
-    @Column(name = "odometer_reading")
-    private Double odometerReading;
-
-    private String notes;
-
-    @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
-
-    @PrePersist
-    public void prePersist() {
-        if (this.createdAt == null) {
-            this.createdAt = LocalDateTime.now();
-        }
-    }
+    @Column(name = "cost")
+    private Double cost;
 }
 
