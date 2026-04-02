@@ -53,7 +53,8 @@ public class CorsConfig implements WebMvcConfigurer {
                         "http://172.30.*:*",
                         "https://172.30.*:*",
                         "http://172.31.*:*",
-                        "https://172.31.*:*"
+                        "https://172.31.*:*",
+                        "https://unique-biscuit-d4e197.netlify.app"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
