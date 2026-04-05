@@ -21,8 +21,8 @@ public class EntryService {
         EntryEntity entry = new EntryEntity();
         entry.setUserId(userId);
         entry.setVehicleId(request.getVehicleId());
-        entry.setAmount(request.getAmount());
         entry.setAmount(request.getFuelQuantity());
+        entry.setCost(request.getAmount());
         entry.setDate(request.getEntryDate());
 
 
