@@ -19,7 +19,7 @@ public class EntryEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(name = "user_id", nullable = false)
+    @Column(name = "userid", nullable = false)
     private UUID userId;
 
     @Column(name = "vehicle_id", nullable = false)

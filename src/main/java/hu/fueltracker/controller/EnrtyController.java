@@ -22,7 +22,8 @@ public class EnrtyController {
     private Logger LOG = Logger.getLogger(EnrtyController.class.getName());
 
     @PostMapping
-    public ResponseEntity<EntryDTO> addEntry(@RequestHeader("User-Id") UUID userId, @RequestBody CreateEntryRequest request) {
+    public ResponseEntity<EntryDTO> addEntry(@RequestHeader("User-Id") String userIdHeader, @RequestBody CreateEntryRequest request) {
+        UUID userId = UUID.fromString(userIdHeader);
         EntryDTO entry = entryService.createEntry(userId, request);
         LOG.info("New entry added for user " + userId);
         return ResponseEntity.status(HttpStatus.CREATED).body(entry);
@@ -36,7 +37,8 @@ public class EnrtyController {
     }
 
     @GetMapping
-    public ResponseEntity<List<EntryDTO>> listUserEntries(@RequestHeader("User-Id") UUID userId) {
+    public ResponseEntity<List<EntryDTO>> listUserEntries(@RequestHeader("User-Id") String userIdHeader) {
+        UUID userId = UUID.fromString(userIdHeader);
         List<EntryDTO> entries = entryService.getUserEntries(userId);
         return ResponseEntity.ok(entries);
     }
