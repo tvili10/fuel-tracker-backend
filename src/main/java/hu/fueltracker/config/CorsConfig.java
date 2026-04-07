@@ -54,7 +54,8 @@ public class CorsConfig implements WebMvcConfigurer {
                         "https://172.30.*:*",
                         "http://172.31.*:*",
                         "https://172.31.*:*",
-                        "https://unique-biscuit-d4e197.netlify.app"
+                        "https://unique-biscuit-d4e197.netlify.app",
+                        "https://fuel-tracker-python-api.onrender.com"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
