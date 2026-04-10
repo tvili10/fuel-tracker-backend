@@ -14,7 +14,7 @@ COPY settings.gradle .
 COPY src src
 
 # Build the application
-RUN chmod +x ./gradlew && ./gradlew build -x test
+RUN chmod +x ./gradlew && ./gradlew build
 
 # Runtime stage
 FROM eclipse-temurin:21-jre-alpine
