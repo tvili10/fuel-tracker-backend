@@ -11,7 +11,7 @@ public class PingController {
 
     @GetMapping("/ping")
     public ResponseEntity<String> receivePing() {
-        LOG.info("ping");
+        LOG.info("Ping recieved");
         return ResponseEntity.ok("pong");
 
     }
