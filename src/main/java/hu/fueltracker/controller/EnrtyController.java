@@ -2,6 +2,8 @@ package hu.fueltracker.controller;
 
 import hu.fueltracker.dto.entry.CreateEntryRequest;
 import hu.fueltracker.dto.entry.EntryDTO;
+import hu.fueltracker.dto.entry.StatsRequest;
+import hu.fueltracker.dto.entry.StatsResponse;
 import hu.fueltracker.service.EntryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -60,5 +62,12 @@ public class EnrtyController {
         EntryDTO entry = entryService.updateEntry(entryId, request);
         LOG.info("Entry " + entryId + " updated");
         return ResponseEntity.ok(entry);
+    }
+
+    @PostMapping("/stats/vehicle/{vehicleId}")
+    public ResponseEntity<StatsResponse> getVehicleStats(@PathVariable UUID vehicleId, @RequestBody StatsRequest request) {
+        StatsResponse stats = entryService.computeStats(vehicleId, request);
+        LOG.info("Stats computed for vehicle " + vehicleId);
+        return ResponseEntity.ok(stats);
     }
 }
