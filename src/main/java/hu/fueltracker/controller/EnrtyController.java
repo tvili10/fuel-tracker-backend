@@ -34,7 +34,7 @@ public class EnrtyController {
     @DeleteMapping("/{entryId}")
     public ResponseEntity<Void> deleteEntry(@PathVariable UUID entryId) {
         entryService.deleteEntry(entryId);
-        LOG.info("Entry " + entryId + " deleted");
+        LOG.info("Entry " + entryId + "  deleted");
         return ResponseEntity.noContent().build();
     }
 
