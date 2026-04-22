@@ -64,7 +64,7 @@ public class EntryService {
                 .orElseThrow(() -> new RuntimeException("Entry not found with id: " + entryId));
 
         if (request.getVehicleId() != null) entry.setVehicleId(request.getVehicleId());
-        if (request.getAmount() != null) entry.setAmount(request.getAmount());
+        if (request.getAmount() != null) entry.setCost(request.getAmount());
         if (request.getFuelQuantity() != null) entry.setAmount(request.getFuelQuantity());
         if (request.getEntryDate() != null) entry.setDate(request.getEntryDate());
 
